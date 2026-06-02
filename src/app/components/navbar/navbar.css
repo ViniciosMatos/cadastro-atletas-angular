@@ -1,0 +1,15 @@
+
+.navbar{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: rgb(52, 73, 196);
+    padding: 2vh 6vh;
+    color: white;
+}
+
+button{
+    border: none;
+    padding: 1rem;
+    border-radius: 2rem;
+}

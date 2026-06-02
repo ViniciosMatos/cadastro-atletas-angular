@@ -1,0 +1,12 @@
+.form-container{
+    width: 70%;
+    margin: 2rem auto;
+    border: 1px solid;
+    text-align: center;
+
+}
+
+.atleta-form{
+    display: flex;
+    flex-direction: column;
+}

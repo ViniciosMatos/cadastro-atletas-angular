@@ -1,1 +1,40 @@
-<p>atleta-list works!</p>
+<section>
+    <h2>Atletas Cadastrados</h2>
+
+    @if(atletas().length > 0 && !carregando()){
+        <table>
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Nome</th>
+                    <th>Idade</th>
+                    <th>Nacionalidade</th>
+                    <th>Esporte</th>
+                </tr>
+            </thead>
+            <tbody>
+                @for (atleta of atletas(); track atleta.id) {
+                    <tr>
+                        <td>{{atleta.id}}</td>
+                        <td>{{atleta.nome}}</td>
+                        <td>{{atleta.idade}}</td>
+                        <td>{{atleta.nacionalidade}}</td>
+                        <td>{{atleta.esporte}}</td>
+                        <td>
+                            <button type="button" (click)="editar(atleta)">Editar</button>
+                            <button type="button" (click)="excluir(atleta)">Excluir</button>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    }
+
+    @if(carregando()){
+        <p>Carregando atletas...</p>
+    }
+    @if(atletas().length === 0 && !carregando()){
+        <p>Nenhum atleta cadastrado.</p>
+    }
+    
+</section>

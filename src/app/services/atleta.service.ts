@@ -7,7 +7,7 @@ import { Observable } from "rxjs";
     providedIn: 'root'
 })
 export class AtletaService {
-    private readonly apiUrl = 'http://localhost:8080/atletas';
+    private readonly apiUrl = 'http://localhost:3000/atletas';
     private readonly http = inject(HttpClient);
 
     listar(): Observable<Atleta[]>{

@@ -9,17 +9,17 @@ import { Atleta } from '../../model/atleta';
   styleUrl: './atleta-list.css',
 })
 export class AtletaList implements OnInit{
-  private readonly produtoService = inject(AtletaService);
+  private readonly atletaService = inject(AtletaService);
   atletas = signal<Atleta[]>([]);
   carregando = signal<boolean>(false);
 
   ngOnInit() {
-    
+    this.carregarAtletas();
   }
 
   carregarAtletas(): void{
     this.carregando.set(true);
-    this.produtoService.listar().subscribe({
+    this.atletaService.listar().subscribe({
       next: (dados) => {
         this.atletas.set(dados);
         this.carregando.set(false);
@@ -34,9 +34,26 @@ export class AtletaList implements OnInit{
   excluir(atleta: Atleta): void{
     if(!atleta.id) return;
 
-    this.produtoService.excluir(atleta.id).subscribe({
+    this.atletaService.excluir(atleta.id).subscribe({
       next: () => this.carregarAtletas(),
       error: (erro) => console.error('Erro ao excluir', erro),
     })
+  }
+
+  editar(atleta: Atleta): void {
+    if(!atleta.id) return;
+
+    const novoNome = prompt('Novo nome:', atleta.nome);
+
+    if(!novoNome) return;
+
+    const atletaAtualizado: Atleta = {
+      ...atleta,
+      nome: novoNome
+    };
+      this.atletaService.atualizar(atletaAtualizado, atleta.id).subscribe({
+      next: () => this.carregarAtletas(),
+      error: (erro) => console.error('Erro ao editar atleta:', erro)
+    });
   }
 }
