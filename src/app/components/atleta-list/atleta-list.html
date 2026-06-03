@@ -1,4 +1,4 @@
-<section>
+<section class="list-container">
     <h2>Atletas Cadastrados</h2>
 
     @if(atletas().length > 0 && !carregando()){
@@ -20,9 +20,10 @@
                         <td>{{atleta.idade}}</td>
                         <td>{{atleta.nacionalidade}}</td>
                         <td>{{atleta.esporte}}</td>
+                        <td>{{atleta.emAtividade ? 'Sim' : 'Não'}}</td>
                         <td>
-                            <button type="button" (click)="editar(atleta)">Editar</button>
-                            <button type="button" (click)="excluir(atleta)">Excluir</button>
+                            <button type="button" class="button edit-button" (click)="editar(atleta)">Editar</button>
+                            <button type="button" class="button danger-button" (click)="excluir(atleta)">Excluir</button>
                         </td>
                     </tr>
                 }

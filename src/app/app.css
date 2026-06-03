@@ -1,7 +1,9 @@
-.page {
-    max-width: 1000px;
-    margin: 32px auto;
-    padding: 0 16px;
-    display:  grid;
+.container {
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 24px 16px 40px;
+    display: flex;
+    flex-direction: column;
     gap: 24px;
 }

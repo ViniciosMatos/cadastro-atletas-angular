@@ -4,4 +4,5 @@ export interface Atleta {
     idade: number;
     nacionalidade: string;
     esporte: string;
+    emAtividade: boolean;
 }

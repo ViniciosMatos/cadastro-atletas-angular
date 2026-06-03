@@ -1,0 +1,58 @@
+.list-container {
+    width: 100%;
+    margin: 0 auto;
+    padding: 16px;
+    border: 1px solid #dbe4ff;
+    border-radius: 16px;
+    background: #fff;
+    box-shadow: 0 6px 18px rgba(15, 23, 42, 0.08);
+    text-align: center;
+}
+
+.container h2 {
+    margin-bottom: 12px;
+    text-align: center;
+    color: #1e3a8a;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th,
+td {
+    padding: 0.75rem;
+    border-bottom: 1px solid #e5e7eb;
+    text-align: left;
+}
+
+th {
+    background: #eff6ff;
+    color: #1e3a8a;
+}
+
+button {
+    margin-right: 6px;
+    padding: 0.45rem 0.7rem;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.danger-button {
+    border: 1px solid red;
+    background-color: rgb(255, 87, 87);
+
+    &:hover {
+    background-color: rgb(255, 39, 39);
+    }
+}
+
+.edit-button {
+    border: 1px solid green;
+    background-color: rgb(105, 219, 105);
+
+    &:hover {
+        background-color: rgb(66, 189, 66);
+    }
+}

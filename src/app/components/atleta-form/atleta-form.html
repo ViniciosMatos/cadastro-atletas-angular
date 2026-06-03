@@ -3,37 +3,31 @@
 
     <form class="atleta-form" (ngSubmit)="salvar()">
         <label>
-            Nome
-            <input 
-            type="text" 
-            name="nome" 
-            [(ngModel)]="atleta.nome" 
-            placeholer="Cristiano Ronaldo"/>
+            <h3>Nome</h3>
+            <input type="text" name="nome" [(ngModel)]="atleta.nome" required placeholer="Cristiano Ronaldo" />
         </label>
         <label>
-            Idade
-            <input 
-            type="number" 
-            name="idade" 
-            [(ngModel)]="atleta.idade" 
-            placeholer="41"/>
+            <h3>Idade</h3>
+            <input type="number" name="idade" [(ngModel)]="atleta.idade" min="0" required placeholer="41" />
         </label>
         <label>
-            Nacionalidade
-            <input 
-            type="text" 
-            name="nacionalidade" 
-            [(ngModel)]="atleta.nacionalidade" 
-            placeholer="Português"/>
+            <h3>Nacionalidade</h3>
+            <input type="text" name="nacionalidade" [(ngModel)]="atleta.nacionalidade" required
+                placeholer="Português" />
         </label>
         <label>
-            Esporte
-            <input 
-            type="text" 
-            name="esporte" 
-            [(ngModel)]="atleta.esporte" 
-            placeholer="Futebol"/>
+            <h3>Esporte</h3>
+            <input type="text" name="esporte" [(ngModel)]="atleta.esporte" required placeholer="Futebol" />
         </label>
+        <label>
+            <div class="checkbox-container">
+                <h3>Está em atividade?</h3>
+                <input type="checkbox" name="emAtividade" [(ngModel)]="atleta.emAtividade" />
+            </div>
+        </label>
+        @if (mensagemErro) {
+        <p class="erro-validacao">{{ mensagemErro }}</p>
+        }
         <button type="submit">Salvar</button>
     </form>
 </section>
