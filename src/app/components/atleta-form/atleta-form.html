@@ -4,20 +4,20 @@
     <form class="atleta-form" (ngSubmit)="salvar()">
         <label>
             <h3>Nome</h3>
-            <input type="text" name="nome" [(ngModel)]="atleta.nome" required placeholer="Cristiano Ronaldo" />
+            <input type="text" name="nome" [(ngModel)]="atleta.nome" required placeholder="Cristiano Ronaldo" />
         </label>
         <label>
             <h3>Idade</h3>
-            <input type="number" name="idade" [(ngModel)]="atleta.idade" min="0" required placeholer="41" />
+            <input type="number" name="idade" [(ngModel)]="atleta.idade" min="0" required placeholder="41" />
         </label>
         <label>
             <h3>Nacionalidade</h3>
             <input type="text" name="nacionalidade" [(ngModel)]="atleta.nacionalidade" required
-                placeholer="Português" />
+                placeholder="Português" />
         </label>
         <label>
             <h3>Esporte</h3>
-            <input type="text" name="esporte" [(ngModel)]="atleta.esporte" required placeholer="Futebol" />
+            <input type="text" name="esporte" [(ngModel)]="atleta.esporte" required placeholder="Futebol" />
         </label>
         <label>
             <div class="checkbox-container">

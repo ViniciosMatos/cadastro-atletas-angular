@@ -1,6 +1,6 @@
 import { ChangeDetectorRef, Component, EventEmitter, inject, Output } from '@angular/core';
 import { AtletaService } from '../../services/atleta.service';
-import { Atleta } from '../../model/atleta';
+import { Atleta } from '../../models/atleta';
 import { FormsModule } from '@angular/forms';
 
 @Component({
@@ -23,7 +23,7 @@ export class AtletaForm {
   @Output() salvo = new EventEmitter<void>();
 
   private readonly cdr = inject(ChangeDetectorRef);
-  private readonly produtoService = inject(AtletaService);
+  private readonly atletaService = inject(AtletaService);
 
   private validarFormulario(): boolean {
     const nomeValido = this.atleta.nome.trim().length > 0;
@@ -45,7 +45,7 @@ export class AtletaForm {
       return;
     }
 
-    this.produtoService.criar(this.atleta).subscribe({
+    this.atletaService.criar(this.atleta).subscribe({
       next: () => {
         this.atleta = {
           nome: '',

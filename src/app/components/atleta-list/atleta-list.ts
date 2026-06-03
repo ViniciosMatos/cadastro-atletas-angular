@@ -1,6 +1,6 @@
 import { Component, inject, OnInit, signal } from '@angular/core';
 import { AtletaService } from '../../services/atleta.service';
-import { Atleta } from '../../model/atleta';
+import { Atleta } from '../../models/atleta';
 
 @Component({
   selector: 'app-atleta-list',
@@ -34,6 +34,11 @@ export class AtletaList implements OnInit {
   excluir(atleta: Atleta): void {
     if (!atleta.id) return;
 
+    const confirmou = confirm(`Deseja realmente excluir o atleta "${atleta.nome}"?`);
+    if (!confirmou) {
+      return;
+    }
+
     this.atletaService.excluir(atleta.id).subscribe({
       next: () => this.carregarAtletas(),
       error: (erro) => console.error('Erro ao excluir', erro),
@@ -47,6 +52,7 @@ export class AtletaList implements OnInit {
     const novaIdade = prompt('Nova Idade:', atleta.idade.toString());
     const novaNacionalidade = prompt('Nova Nacionalidade:', atleta.nacionalidade);
     const novoEsporte = prompt('Novo Esporte:', atleta.esporte);
+    const novoAtividade = confirm("O atleta ainda está em atividade?");
     if (!novoNome || !novaIdade || !novaNacionalidade || !novoEsporte) return;
     if (parseInt(novaIdade) < 0) {
       alert('Idade deve ser maior ou igual a 0.');
@@ -58,7 +64,8 @@ export class AtletaList implements OnInit {
       nome: novoNome,
       idade: parseInt(novaIdade),
       nacionalidade: novaNacionalidade,
-      esporte: novoEsporte
+      esporte: novoEsporte,
+      emAtividade: novoAtividade
     };
     this.atletaService.atualizar(atletaAtualizado, atleta.id).subscribe({
       next: () => this.carregarAtletas(),

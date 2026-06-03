@@ -1,59 +1,74 @@
-# ProjetoAp2
+# AP2 - Aplicações Front-End
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 21.2.13.
+## Identificação
 
-## Development server
+Nome: Vinicios Matos  
+Curso: Análise e Desenvolvimento de Sistemas  
+Disciplina: Aplicações Front-End  
+Instituição: ULBRA  
 
-To start a local development server, run:
+## Tema do projeto
 
-```bash
-ng serve
-```
+CRUD de Atletas com Angular e JSON Server.
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+## Descrição
 
-## Code scaffolding
+Aplicação desenvolvida em Angular para cadastro, listagem, edição e exclusão de atletas, utilizando JSON Server como API simulada. A entidade "Atleta" possui os seguintes campos: Nome, Idade, Nacionalidade, Esporte e Atividade (se está em atividade ou não).
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+## Tecnologias utilizadas
 
-```bash
-ng generate component component-name
-```
+- Angular (v21)
+- TypeScript
+- HTML
+- CSS
+- JSON Server
+- Git e GitHub
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+## Como executar o projeto
 
-```bash
-ng generate --help
-```
-
-## Building
-
-To build the project run:
+1. Clone o repositório:
 
 ```bash
-ng build
+git clone https://github.com/ViniciosMatos/cadastro-atletas-angular.git
 ```
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
+2. Acesse a pasta do projeto:
 
 ```bash
-ng test
+cd cadastro-atletas-angular
 ```
 
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
+3. Instale as dependências:
 
 ```bash
-ng e2e
+npm install
 ```
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+4. Execute a API fake (JSON Server) e o servidor de desenvolvimento do Angular em conjunto:
 
-## Additional Resources
+```bash
+npm run start:all
+```
 
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+*Se preferir rodar em terminais separados, você pode usar os seguintes comandos:*
+
+  **Terminal 1 (API):** `npm run api`
+  **Terminal 2 (Angular):** `npm start`
+
+5. Acesse no navegador:
+
+```txt
+http://localhost:4200
+```
+
+## Link do vídeo demonstrativo
+
+[Insira aqui o link público do vídeo demonstrativo]
+
+## Funcionalidades
+
+- **Cadastro de Atletas:** Formulário com validações básicas para inserir novos atletas (Nome, Idade, Nacionalidade, Esporte e Status de Atividade).
+- **Listagem de Atletas:** Tabela responsiva exibindo todos os atletas cadastrados na API.
+- **Edição de Atletas:** Edição das informações dos atletas diretamente pela interface de listagem.
+- **Exclusão de Atletas:** Remoção física do registro no banco simulado (`db.json`) com confirmação prévia.
+- **Integração com JSON Server:** Persistência de dados completa em uma API REST local simulada.

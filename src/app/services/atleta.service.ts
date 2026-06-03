@@ -1,6 +1,6 @@
 import { HttpClient } from "@angular/common/http";
 import { inject, Injectable } from "@angular/core";
-import { Atleta } from "../model/atleta";
+import { Atleta } from "../models/atleta";
 import { Observable } from "rxjs";
 
 @Injectable({
