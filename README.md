@@ -63,7 +63,7 @@ http://localhost:4200
 
 ## Link do vídeo demonstrativo
 
-[Insira aqui o link público do vídeo demonstrativo]
+https://drive.google.com/drive/folders/1jjhDBueC01-vfo4raM0ihb6jw_BpV7gn?usp=sharing
 
 ## Funcionalidades
 

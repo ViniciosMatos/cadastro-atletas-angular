@@ -2,11 +2,19 @@
   "atletas": [
     {
       "nome": "Cristiano Ronaldo",
-      "idade": 42,
-      "nacionalidade": "Brasileiro",
+      "idade": 41,
+      "nacionalidade": "Português",
+      "esporte": "Futebol",
+      "emAtividade": false,
+      "id": "8iDEXIeCm0A"
+    },
+    {
+      "nome": "Messi",
+      "idade": 38,
+      "nacionalidade": "Argentino",
       "esporte": "Futebol",
       "emAtividade": true,
-      "id": "VDt2fIDBnS8"
+      "id": "dLQrr75UES8"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"
